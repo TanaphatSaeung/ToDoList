@@ -4,8 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <div class="wrapper">
+        <div class="task-input">
+            <i class="fa-solid fa-bars"></i>
+            <input type="text" placeholder="Add a new Task">
+        </div>
+        <div class="controls">
+            <div class="filters">
+                <span id="all" class="active">All</span>
+                <span id="pending">Pending</span>
+                <span id="completed">Completed</span>
+            </div>
+            <button class="clear-btn">Clear All</button>
+        </div>
+        <ul class="task-box">
+            <!-- From local storage -->
+        </ul>
+    </div>
+    <!-- get icons -->
+    <script src="https://kit.fontawesome.com/3291f801f9.js" crossorigin="anonymous"></script>
+    <!-- real script -->
+    <script src="scripts.js"></script>
 </body>
 </html>
