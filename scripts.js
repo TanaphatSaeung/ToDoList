@@ -104,24 +104,33 @@ taskInput.addEventListener('keyup', e=>{
         } else {
             isEditedTask = false
             flag = 'Y'
+            console.log(flag, isEditedTask);
+            
             todos[editId].name = userTask
         }
         taskInput.value = '' 
         localStorage.setItem('todo-list', JSON.stringify(todos))
         queryID = document.querySelector('span.active').id
-        console.log(queryID);
         
-        filter.forEach(btn => {
-            if(flag == 'Y'){
-                flag = ''
-                showTodo(queryID)
+        for(let i = 0;i <= queryID.length;i++){
+            if(queryID == 'completed'){
+                if (flag === 'Y') {
+                    console.log('com',flag);
+                    flag = ''
+                    showTodo(queryID)
+                    break
+                }else{
+                    console.log(flag);
+                    backToAll()
+                }
             }else if(queryID == 'pending'){
                 showTodo(queryID)
             }
             else{
+                console.log(queryID);
                 backToAll()
             }
-        })
+        }
     }
 })
 // ------------------------------------------------------------------------------
